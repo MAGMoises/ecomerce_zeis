@@ -1,2 +1,12 @@
+<h3>Olá</h3>
+
+<% if user_signed_in? %>
+
 <h1>Bem vida a nossa loja</h1>
-<p></p>
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+
+<% else %>
+<h3>se cadastre <%= link_to "Sign up", new_user_registration_path %> </h3>
+<%= link_to "Login", new_user_session_path, class: ""  %>
+<% end %>
+
